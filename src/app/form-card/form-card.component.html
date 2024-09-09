@@ -1,0 +1,36 @@
+<!-- <div *ngFor="let form of formdata">
+    <h1>FirstName : {{form.Fname}}</h1>
+    <h1>LastName : {{form.Lname}}</h1>
+    <h1>Email : {{form.Email}}</h1>
+    <h1>DOB : {{form.Dob}}</h1>
+    <h1>Gender : {{form.Gender}}</h1>
+    <h1>Description : {{form.Description}}</h1>
+</div> -->
+<div class="card-display">
+  <div class="card" *ngFor="let form of formdata;let i = index">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="fname">First Name : {{form.Fname}}</label>
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name : {{form.Lname}}</label>
+      </div>
+      <div class="form-group">
+        <label for="email">Email : {{form.Email}}</label>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth : {{form.Dob}}</label>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender : {{form.Gender}}</label>
+      </div>
+      <div class="form-group">
+        <label for="description">Description : {{form.Description}}</label>
+      </div>
+      <div style="padding-top: 5px;">
+        <button mat-raised-button color="primary" style="margin-right: 25px;">UPDATE ✏️</button>
+        <button mat-raised-button color="warn" (click)="onDelete(i)">DELETE 🗑️</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div mat-dialog-title style="padding-bottom: 10px;">
+    <h1><b>UserForm</b></h1>
+</div>
+<form [formGroup]="userForm">
+    <div mat-dialog-content style="padding-top: 10px;">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>FirstName</mat-label>
+                <input matInput type="text" placeholder="FirstName" formControlName="Fname" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>LastName</mat-label>
+                <input matInput type="text" placeholder="LastName" formControlName="Lname" required>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Enter the Mail" formControlName="Email" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="Dob" required>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="Gender">
+                <mat-label><b>Gender</b></mat-label>
+                <mat-radio-button value="Male">Male</mat-radio-button>
+                <mat-radio-button value="Female">Female</mat-radio-button>
+                <mat-radio-button value="Others">Others</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Enter your comments" formControlName="Description" required></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div mat-dialog-actions style="margin-bottom: 5px;" class="action">
+        <button mat-raised-button style="margin-right: 10px;" color="warn" (click)="closeDialog()">Cancel</button>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+    </div>
+</form>
